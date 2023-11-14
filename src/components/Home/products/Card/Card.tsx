@@ -92,5 +92,7 @@ const Button = styled.button`
     font-weight: 600;
     text-transform: uppercase;
     gap: 14px;
+    
+    cursor: pointer;
    
 `
