@@ -22,22 +22,3 @@ export const Logo = styled.h1`
         }
 `
 
-export const CartBtn = styled.button`
-    display: flex;
-    align-items: center;
-    margin-right: 88px;
-    width: 90px;
-    height: 45px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-        img{
-            margin-left: 15px;
-        }
-
-        div{
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-left: 16px;
-        }
-`

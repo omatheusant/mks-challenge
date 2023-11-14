@@ -11,6 +11,7 @@
     "test:watch": "jest --watchAll"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.8.3",
     "@types/styled-components": "^5.1.30",
     "axios": "^1.6.1",
     "next": "14.0.2",

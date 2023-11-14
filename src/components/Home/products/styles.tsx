@@ -2,7 +2,7 @@
 
 import styled from 'styled-components'
 
-export const Container = styled.main`
+export const Container = styled.div`
     display: flex ;
     justify-content: center;
     align-content: center;
@@ -14,7 +14,7 @@ export const ProductsGrid = styled.div`
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 22px;
-    grid-row-gap: 0px; 
+    grid-row-gap: 31px; 
 
 `
 
