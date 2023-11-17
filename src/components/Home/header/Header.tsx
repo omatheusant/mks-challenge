@@ -5,8 +5,8 @@ import * as S from './styles'
 export const Header = () => {
     return (
         <S.Header data-testid="header">
-            <S.Logo>MKS
-                <span>Sistemas</span>
+            <S.Logo>TWS
+                <span>Infoeletrônicos</span>
             </S.Logo>
             <Cart/>
         </S.Header>

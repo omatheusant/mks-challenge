@@ -1,32 +1,38 @@
 'use client';
 import * as S from './styles'
 import { ProductsApi } from '@/services/apiRequest';
-import { useQuery } from 'react-query';
 import { Card } from './Card/Card';
+import { useContext, useEffect } from 'react';
+import { AppContext } from '@/context/AppContext';
 
-const getProducts = async () => {
-    const { data } = await ProductsApi.get('products?page=1&rows=8&sortBy=id&orderBy=ASC')
-    return data.products
-}
 
 export const Products = () => {
-    const { data, status } = useQuery("products", getProducts);
+    const {products, setProducts} = useContext(AppContext)
+    useEffect(() => {
+        getProducts()
+    }, [])
+    const getProducts = async () => {
+            ProductsApi
+                .get('products?page=1&rows=8&sortBy=id&orderBy=ASC')
+                .then((res) => {
+                    setProducts(res.data.products)
+                })
+    }
     const ProductCard = (products: any[]) => {
-        return products.map((product: any) => {
-            return <Card 
-                        photo={product.photo}
-                        brand={product.brand}
-                        name={product.name}
-                        price={product.price}
-                        />
+        return products.map((product: any, index: number) => {
+            return <Card data={{
+                price: product.price,
+                photo: product.photo,
+                name: product.name,
+                brand: product.brand,
+                id: index
+            }} />
         });
     };
     return (
         <S.Container>
             <S.ProductsGrid>
-                {status === "loading" && <div>Loading...</div>}
-                {status === "error" && <div>Error fetching pokemons</div>}
-                {status === "success" && <>{ProductCard(data)}</>}
+                 {ProductCard(products)}
             </S.ProductsGrid>
         </S.Container>
     )

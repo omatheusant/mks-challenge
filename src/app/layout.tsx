@@ -4,7 +4,7 @@ import '@/styles/globals.css'
 
 
 import { QueryClient, QueryClientProvider } from 'react-query'
-import { ReactQueryDevtools } from "react-query/devtools";
+
 
 
 export default function RootLayout({
@@ -18,7 +18,6 @@ export default function RootLayout({
       <body>
         <QueryClientProvider client={queryClient}>
           {children}
-          <ReactQueryDevtools initialIsOpen={false} />
         </QueryClientProvider>
       </body>
     </html>

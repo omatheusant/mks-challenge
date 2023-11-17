@@ -1,13 +1,14 @@
+import { AppContext } from "@/context/AppContext"
+import { useContext } from "react"
 import styled from "styled-components"
 
-interface Props {
-    photo: string,
-    name: string,
-    brand: string,
-    price: string
-}
 
-export const Card = ({ photo, name, brand, price }: Props) => {
+
+export const Card = ({ data }: any) => {
+    const {photo, name, brand, price } = data;
+    const { cartItems, setCartItems } = useContext(AppContext);
+    const handleAddCart = () => setCartItems([...cartItems, data])
+    
     return (
         <CardContainer>
             <Image src={photo} alt="" />
@@ -16,7 +17,7 @@ export const Card = ({ photo, name, brand, price }: Props) => {
                 <Price>{price}</Price>
             </TitleContainer>
             <Desc>Redesigned from scratch and completely revised.</Desc>
-            <Button><img src="/assets/shop.svg" alt="" />Comprar</Button>
+            <Button onClick={handleAddCart}><img src="/assets/shop.svg" alt="" />Comprar</Button>
         </CardContainer>
     )
 }
