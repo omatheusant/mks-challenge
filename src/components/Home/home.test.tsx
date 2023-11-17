@@ -6,6 +6,5 @@ describe('home', () => {
         render(<Header/>);
         const myElem = screen.getByTestId('header')
         expect(myElem).toBeInTheDocument()
-
     })
 })
