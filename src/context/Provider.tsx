@@ -8,6 +8,7 @@ interface ProviderProps {
     children: ReactNode
 }
 export function Provider ({ children }: ProviderProps ) {
+  
     const [cartItems, setCartItems] = useState([])
     const [products, setProducts] = useState([])
     const value = {

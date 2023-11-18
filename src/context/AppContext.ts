@@ -1,3 +1,13 @@
 import { createContext } from "react";
 
-export const AppContext = createContext();
+interface Props {
+    products: never[],
+    setProducts: React.Dispatch<React.SetStateAction<never[]>>,
+    cartItems: never[],
+    setCartItems: React.Dispatch<React.SetStateAction<never[]>>,
+    
+
+
+}
+
+export const AppContext = createContext<Props>();

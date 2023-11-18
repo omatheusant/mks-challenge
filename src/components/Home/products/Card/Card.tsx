@@ -3,8 +3,7 @@ import { useContext } from "react"
 import styled from "styled-components"
 
 
-
-export const Card = ({ data }: any) => {
+export const Card = ({ data }) => {
     const {photo, name, brand, price } = data;
     const { cartItems, setCartItems } = useContext(AppContext);
     const handleAddCart = () => setCartItems([...cartItems, data])
